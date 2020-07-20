@@ -113,7 +113,7 @@ public class PESLBuiltins {
                 return new BooleanObject(value);
             }))
             .put("noise", FunctionObject.of(false, arguments -> {
-                PESLEvalException.validArgumentListLength(arguments, 1, 2);;
+                PESLEvalException.validArgumentListLength(arguments, 1, 2);
                 double y = 0;
                 if (arguments.size() == 2) y = arguments.get(0).asNumber().getValue();
                 return new NumberObject(OpenSimplexNoise.PESL_INSTANCE.sample(arguments.get(0).asNumber().getValue()));
